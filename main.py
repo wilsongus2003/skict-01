@@ -8,8 +8,8 @@ warnings.simplefilter("ignore")
 if __name__ == "__main__":
     utils = Utils()
     models = Models()
-    data = utils.load_from_csv('./in/severidad.csv')
-    X, y = utils.features_target(data,['severidad','planta'], ['severidad'])
+    data = utils.load_from_csv('./in/agosto_severidad.csv')
+    X, y = utils.features_target(data,['severidad'], ['severidad'])
     models.grid_training(X,y)
     #print(data)
 

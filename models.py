@@ -16,20 +16,20 @@ class Models:
              'GradientClass' : GradientBoostingClassifier()
         }
         self.params = {
-
-            'FORREST' : {
-                'n_estimators' : range(6,11),
-                'criterion' : ['squared_error', 'absolute_error'],
-                'max_depth' : range(4,11)
-            },
-            'LinearSVC': {
-                'max_iter' : [1000],
-            },
-            'GradientClass' : {
-                'n_estimators' : [125],
-                'learning_rate': [0.01, 0.05, 0.1],
-                'criterion': ['friedman_mse', 'mse']
-            }
+ 
+                'FORREST' : {
+                    'n_estimators' : range(6,11),
+                    'criterion' : ['squared_error', 'absolute_error'],
+                    'max_depth' : range(4,11)
+                },
+                'LinearSVC': {
+                    'max_iter' : [1000],
+                },
+                'GradientClass' : {
+                    'n_estimators' : [125],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'criterion': ['friedman_mse', 'mse']
+                }
 
         }
     def grid_training(self, X, y):
@@ -44,3 +44,4 @@ class Models:
                 best_model = grid_reg.best_estimator_
         utils = Utils()
         utils.model_export(best_model, best_score)
+
